@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-// using SoakSeeker.Models;
-// using Microsoft.EntityFrameworkCore;
+using SoakSeeker.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace SoakSeeker
 {
@@ -13,13 +13,13 @@ namespace SoakSeeker
 
       builder.Services.AddControllersWithViews();
 
-      // builder.Services.AddDbContext<SoakSeekerContext>(
-                        // dbContextOptions => dbContextOptions
-                        //   .UseMySql(
-                        //     builder.Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(builder.Configuration["ConnectionStrings:DefaultConnection"]
-                        //   )
-                        // )
-                      // );
+      builder.Services.AddDbContext<SoakSeekerContext>(
+                        dbContextOptions => dbContextOptions
+                          .UseMySql(
+                            builder.Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(builder.Configuration["ConnectionStrings:DefaultConnection"]
+                          )
+                        )
+                      );
 
       WebApplication app = builder.Build();
 
