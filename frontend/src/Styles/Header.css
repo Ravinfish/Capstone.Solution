@@ -1,0 +1,9 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  /* background-image: url('../assets/Images/banner.png'); */
+  background-size: cover;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
